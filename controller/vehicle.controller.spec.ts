@@ -1,13 +1,7 @@
 import { getMockReq, getMockRes } from "@jest-mock/express";
 import { getVehicleByTime } from "./vehicle.controller";
-import { mockConnection } from "./__mocks__/typeorm";
 
-beforeAll(async () => {
-  jest.mock("typeorm", () => ({
-    createConnection: jest.fn().mockResolvedValue(mockConnection),
-  }));
-});
-
+jest.mock("../client/dbClient");
 describe("Space test suite", () => {
   it("My Space Test", async () => {
     const req = getMockReq({

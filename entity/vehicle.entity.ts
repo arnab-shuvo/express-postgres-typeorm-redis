@@ -1,16 +1,9 @@
-import {
-  Entity,
-  Column,
-  PrimaryGeneratedColumn,
-  ManyToOne,
-  OneToMany,
-  JoinTable,
-} from "typeorm";
+import { Entity, Column, OneToMany, PrimaryColumn } from "typeorm";
 import { StateLogs } from "./stateLogs.entity";
 
 @Entity("vehicles")
 export class Vehicle {
-  @PrimaryGeneratedColumn({ type: "integer", name: "id" })
+  @PrimaryColumn({ type: "integer", name: "id" })
   id: number;
 
   @Column({ type: "text", name: "make" })
